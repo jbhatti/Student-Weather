@@ -13,10 +13,56 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    
+    UITabBarController *tabBarController = [[UITabBarController alloc] init];
     // Your code goes here
+    City *vancouver = [[City alloc] init];
+    vancouver.temperature = 17;
+    vancouver.city = @"Vancouver";
+    vancouver.condition = @"Rainy";
+    
+    City *miami = [[City alloc] init];
+    miami.temperature = 25;
+    miami.city = @"Miami";
+    miami.condition = @"Sunny";
+    
+    City *tokyo = [[City alloc] init];
+    tokyo.temperature = 20;
+    tokyo.city = @"Tokyo";
+    tokyo.condition = @"Windy";
+    
+    City *london = [[City alloc] init];
+    london.temperature = 15;
+    london.city = @"London";
+    london.condition = @"Fog";
+    
+    City *johannesberg = [[City alloc] init];
+    johannesberg.temperature = 28;
+    johannesberg.city = @"Johannesberg";
+    johannesberg.condition = @"Hot";
+    
+    CityViewController *vancouverVC = [[CityViewController alloc] init];
+    CityViewController *miamiVC = [[CityViewController alloc] init];
+    CityViewController *tokyoVC = [[CityViewController alloc] init];
+    CityViewController *londonVC = [[CityViewController alloc] init];
+    CityViewController *johannesbergVC = [[CityViewController alloc] init];
+    UINavigationController* navigationController1 = [[UINavigationController alloc] initWithRootViewController:vancouverVC];
+    UINavigationController* navigationController2 = [[UINavigationController alloc] initWithRootViewController:miamiVC];
+    UINavigationController* navigationController3 = [[UINavigationController alloc] initWithRootViewController:tokyoVC];
+    UINavigationController* navigationController4 = [[UINavigationController alloc] initWithRootViewController:londonVC];
+    UINavigationController* navigationController5 = [[UINavigationController alloc] initWithRootViewController:johannesbergVC];
+    
+    NSArray* controllers = [NSArray arrayWithObjects:navigationController1 , navigationController2, navigationController3, navigationController4, navigationController5, nil];
+    
+    tabBarController.viewControllers = controllers;
+    
+    UITabBarItem *tabTitle = [[UITabBarItem alloc] initWithTitle:@"Vancouver" image:nil tag:0];
+    [tabTitle setTitle:@"Vancouver"];
+    
+    
     // Don't forget to assign the window a rootViewController
     
+    
+    [self.window setRootViewController:tabBarController];
     [self.window makeKeyAndVisible];
     return YES;
 }

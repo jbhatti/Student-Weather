@@ -7,9 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "City.h"
+#import "CityViewController.h"
+
 
 @interface LHWAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UINavigationController *navController1;
+@property (strong, nonatomic) UINavigationController *navController2;
+@property (strong, nonatomic) UINavigationController *navController3;
+@property (strong, nonatomic) UINavigationController *navController4;
+@property (strong, nonatomic) UINavigationController *navController5;
+
 
 @end
