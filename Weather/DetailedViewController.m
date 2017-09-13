@@ -26,7 +26,6 @@
     cityTemp.text = [NSString stringWithFormat:@"Temp: %li", (long)self.city.temperature];
     cityTemp.textColor = [UIColor whiteColor];
     [self.view addSubview:cityTemp];
-    cityTemp.center = self.view.center;
     [cityTemp sizeToFit];
     
     UILabel *cityCondition = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -34,7 +33,6 @@
     cityCondition.text = [NSString stringWithFormat:@"Condition: %@", self.city.condition];
     cityCondition.textColor = [UIColor whiteColor];
     [self.view addSubview:cityCondition];
-    cityCondition.center = self.view.center;
     [cityCondition sizeToFit];
     
 }
