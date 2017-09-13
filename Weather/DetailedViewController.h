@@ -11,6 +11,6 @@
 
 @interface DetailedViewController : UIViewController
 
-
+@property (nonatomic, strong) City *city;
 
 @end

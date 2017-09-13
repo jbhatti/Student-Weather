@@ -14,24 +14,31 @@
 
 @implementation DetailedViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.view.backgroundColor = [UIColor clearColor];
+    
+    UILabel *cityTemp = [[UILabel alloc] initWithFrame:CGRectZero];
+    cityTemp.frame = CGRectMake(100.0, 100.0, 100.0, 100.0);
+    cityTemp.text = [NSString stringWithFormat:@"Temp: %li", (long)self.city.temperature];
+    cityTemp.textColor = [UIColor whiteColor];
+    [self.view addSubview:cityTemp];
+    cityTemp.center = self.view.center;
+    [cityTemp sizeToFit];
+    
+    UILabel *cityCondition = [[UILabel alloc] initWithFrame:CGRectZero];
+    cityCondition.frame = CGRectMake(10.0, 150.0, 100.0, 100.0);
+    cityCondition.text = [NSString stringWithFormat:@"Condition: %@", self.city.condition];
+    cityCondition.textColor = [UIColor whiteColor];
+    [self.view addSubview:cityCondition];
+    cityCondition.center = self.view.center;
+    [cityCondition sizeToFit];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

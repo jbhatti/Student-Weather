@@ -19,24 +19,22 @@
 
 - (void) showWeatherDetails {
     
-//    DetailedViewController * detailedVC = [[DetailedViewController alloc] init];
-//    initialize UIViewController
-//    navigate vc
-    
+    DetailedViewController * detailedVC = [[DetailedViewController alloc] init];
+    detailedVC.city = self.city;
+    [self.navigationController pushViewController:detailedVC animated:YES];
     
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self showWeatherDetails];
     
-    // Do any additional setup after loading the view.
-    UILabel *temp = [[UILabel alloc] init ];
+    // add a barbuttonItem to the self.navigationItem.rightBarButtonItem = // UIBarButtonItem
+    UIBarButtonItem *showDetails = [[UIBarButtonItem alloc] initWithTitle:@"More" style:UIBarButtonItemStylePlain target:self action:@selector(showWeatherDetails)];
+    self.navigationItem.rightBarButtonItem = showDetails;
     
-    temp.text = @(self.city.temperature).stringValue;
-    [self.view addSubview:temp];
-    temp.center = self.view.center;
-    [temp sizeToFit];
+    
 }
 
 -(void)setCity:(City *)city {
