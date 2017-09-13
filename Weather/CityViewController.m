@@ -17,30 +17,33 @@
 @implementation CityViewController
 
 
-- (void) showWeatherDetails:(DetailedViewController*)details {
+- (void) showWeatherDetails {
+    
+//    DetailedViewController * detailedVC = [[DetailedViewController alloc] init];
+//    initialize UIViewController
+//    navigate vc
+    
     
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
+    // Do any additional setup after loading the view.
+    UILabel *temp = [[UILabel alloc] init ];
+    
+    temp.text = @(self.city.temperature).stringValue;
+    [self.view addSubview:temp];
+    temp.center = self.view.center;
+    [temp sizeToFit];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)setCity:(City *)city {
+    self.title = city.city;
+    _city = city;
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

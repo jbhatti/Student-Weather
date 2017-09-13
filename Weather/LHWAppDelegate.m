@@ -41,17 +41,32 @@
     johannesberg.condition = @"Hot";
     
     CityViewController *vancouverVC = [[CityViewController alloc] init];
+    vancouverVC.city = vancouver;
+    vancouverVC.view.backgroundColor = [UIColor blueColor];
+    
     CityViewController *miamiVC = [[CityViewController alloc] init];
+    miamiVC.city = miami;
+    miamiVC.view.backgroundColor = [UIColor redColor];
+    
     CityViewController *tokyoVC = [[CityViewController alloc] init];
+    tokyoVC.city = tokyo;
+    tokyoVC.view.backgroundColor = [UIColor orangeColor];
+    
     CityViewController *londonVC = [[CityViewController alloc] init];
+    londonVC.city = london;
+    londonVC.view.backgroundColor = [UIColor purpleColor];
+    
     CityViewController *johannesbergVC = [[CityViewController alloc] init];
+    johannesbergVC.city = johannesberg;
+    johannesbergVC.view.backgroundColor = [UIColor greenColor];
+    
     UINavigationController* navigationController1 = [[UINavigationController alloc] initWithRootViewController:vancouverVC];
     UINavigationController* navigationController2 = [[UINavigationController alloc] initWithRootViewController:miamiVC];
     UINavigationController* navigationController3 = [[UINavigationController alloc] initWithRootViewController:tokyoVC];
     UINavigationController* navigationController4 = [[UINavigationController alloc] initWithRootViewController:londonVC];
     UINavigationController* navigationController5 = [[UINavigationController alloc] initWithRootViewController:johannesbergVC];
     
-    NSArray* controllers = [NSArray arrayWithObjects:navigationController1 , navigationController2, navigationController3, navigationController4, navigationController5, nil];
+    NSArray* controllers = @[navigationController1 , navigationController2, navigationController3, navigationController4, navigationController5];
     
     tabBarController.viewControllers = controllers;
     

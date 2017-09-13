@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class City;
+
 
 @interface CityViewController : UIViewController
+
+@property (nonatomic, strong) City * city;
 
 @end
